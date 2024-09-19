@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1 -->
+    <button class="btn">Кнопка</button>
+
+    <!-- 2 -->
+    <div id="text">Меня нужно скрыть</div>
+    <button onclick="Hide()">Кнопка 2</button>
+
+    <!-- 3 -->
+    <div id="text3">Меня нужно скрыть, а потом обратно показать</div>
+    <button onclick="Vay()">Кнопка 3</button>
+
+    <!-- 4 -->
+     
+    <p>Нажмите на место, куда нужно перенести мячик</p>
+    <img src="https://ru.js.cx/clipart/ball.svg" id="ball">
+
+
+    <script>
+    //1
+        document.querySelector('.btn').addEventListener('click', function btnHide(){
+            this.style.display = 'none';
+        })
+    
+    //2
+    let hide = document.getElementById('text');
+    function Hide(){
+        hide.style.display = 'none';
+    }
+
+    //3
+    // let vay = document.getElementById('text3');
+    // function Vay1(){
+    //     vay.style.display = 'none';
+    // }
+    // function Vay2(){
+    //     vay.style.display = 'block';
+    // }
+    function Vay(){
+    let vay = document.getElementById('text3');
+    if(vay.style.display=="block"){
+        vay.style.display="none";
+    } else {
+        vay.style.display="block";
+    }}
+
+    //4
+    document.addEventListener('click', (event) => {
+        ball.style.left = `${event.clientX - 20}px`;
+        ball.style.top = `${event.clientY - 20}px`;
+        ball.style.height = '50px';
+        ball.style.position = 'absolute';
+    })
+    </script>
+</body>
+</html>
